@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_core/firebase_core.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -8,19 +7,12 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  void initFireBase() async {
-    WidgetsFlutterBinding.ensureInitialized();
-    await Firebase.initializeApp(     options: FirebaseOptions(
 
-    )
-    );
-  }
 
   List toDoList = [];
   String _taskName = ''; // For add new item
   @override
   void initState() {
-    initFireBase();
     toDoList.addAll(['1', '2', '3']);
     super.initState();
   }
